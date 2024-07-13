@@ -1,0 +1,17 @@
+<a href="/dashboard"><button class="btn btn-primary m-3">Back</button></a>
+<h2 class="m-3">EDIT POST</h2>
+
+
+<form action="/edit-post/<%= dataPost._id %>?_method=PUT" method="POST">
+    <div class="container m-3">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%= dataPost.title %>">
+        </div>
+        <div class="mb-3">
+            <label for="body" class="form-label">Body</label>
+            <textarea name="body" id="body" rows="10" class="form-control"><%= dataPost.body %></textarea>
+        </div>
+        <input type="submit" value="Save Post" class="btn btn-primary">
+    </div>
+</form>

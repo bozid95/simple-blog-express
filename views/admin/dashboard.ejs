@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <h1>ADMIN DASHBOARD</h1>
+
+    <a href="/add-post" class="btn btn-primary">Create Post</a>
+    <ul>
+        <% dataPost.forEach(post => { %>
+        <li class="mt-1">
+            <a href="/post/<%= post._id %>"><%= post.title %></a>
+            <div class="btn-group text-end" role="group" aria-label="Post Actions">
+                <a href="/edit-post/<%= post._id %>" class="btn btn-primary ">Edit</a>
+                <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+</div>
